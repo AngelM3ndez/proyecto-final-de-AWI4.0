@@ -9,7 +9,7 @@ render = web.template.render('mvc/view/admin', base="layout")
 
 class Bienvenida_administrador:
     def GET(self): 
-        if ( web.cookies().get('localid')) != "": # cookie
-            return render.bienvenida_administrador() # redirecinar a bienevenida
+        if ( web.cookies().get('localid')) != "":
+            return render.bienvenida_administrador() 
         else:
-            return render.login() # redirecinar a login
+            return render.login() 
