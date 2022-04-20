@@ -1,0 +1,33 @@
+$def with(user)
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>registro</title>
+    </head>
+    <body>
+        
+    
+        <center>
+        <h1><ACTIVO>
+        <INACTIVO>INACTIVO</h1>
+        <form method="POST">
+            <br>
+            <input  name="localid" type="hidden" value= "$user.key()">
+            <br>
+           <div class="col-auto">
+            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+            <select name="status" class="form-control" id="input">
+              <option selected>Status...</option>
+              <option id="activo" value="activo" >ACTIVO</option>
+              <option id="inactivo" value="inactivo">INACTIVO</option>
+            </select>
+          </div>
+          
+
+          <br>
+          <br>
+            <input type="submit" value="registro" class="btn btn-dark"><br>
+            <center>
+        </form>
+    </body>
+</html>
