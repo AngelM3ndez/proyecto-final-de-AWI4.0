@@ -19,6 +19,7 @@ urls = (
     '/insert_sucursales', 'mvc.controllers.admin.insert_sucursales.Insert_sucursales', 
     '/actualizar_sucursales/(.*)', 'mvc.controllers.admin.actualizar_sucursales.Actualizar_sucursales',
     '/lista_sucursales', 'mvc.controllers.admin.lista_sucursales.Lista_sucursales',  
+    '/eliminar_sucursal/(.*)', 'mvc.controllers.admin.eliminar_sucursal.Eliminar_sucursal',
 )
 app = web.application(urls, globals())
 
