@@ -15,7 +15,8 @@ urls = (
     '/sensor','mvc.controllers.operador.sensor.Sensor',
     '/', 'mvc.controllers.public.inicio.Inicio',  
     '/login', 'mvc.controllers.public.login.Login',
-    '/recuperar_cuenta', 'mvc.controllers.public.recuperar_cuenta.Recuperar_cuenta',   
+    '/recuperar_cuenta', 'mvc.controllers.public.recuperar_cuenta.Recuperar_cuenta',  
+    '/insert_sucursales', 'mvc.controllers.admin.insert_sucursales.Insert_sucursales',  
 )
 app = web.application(urls, globals())
 
