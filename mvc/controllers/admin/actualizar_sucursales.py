@@ -9,7 +9,7 @@ class Actualizar_sucursales:
     def GET(self): 
         try: 
             message = None 
-            return render.insert_sucursales(message) 
+            return render.actualizar_sucursales(message) 
         except Exception as error: 
             message = "Error en el sistema" 
             print("Error actualizar_sucursales.GET: {}") 
