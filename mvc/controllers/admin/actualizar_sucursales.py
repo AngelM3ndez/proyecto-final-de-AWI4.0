@@ -6,7 +6,7 @@ import json # libreria para manejar el formato JSON
 render = web.template.render('mvc/view/admin', base="layout")
 
 class Actualizar_sucursales:
-    def GET(self): 
+    def GET(self, localId): 
         try: 
             message = None 
             return render.actualizar_sucursales(message) 
@@ -16,7 +16,7 @@ class Actualizar_sucursales:
             return render.actualizar_sucursales(message) 
     
 
-    def POST(self): 
+    def POST(self, localId): 
         firebase = pyrebase.initialize_app(token.firebaseConfig) 
         auth = firebase.auth() 
         db = firebase.database() 
