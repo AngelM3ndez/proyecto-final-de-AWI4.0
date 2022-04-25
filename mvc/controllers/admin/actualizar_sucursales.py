@@ -5,15 +5,15 @@ import json # libreria para manejar el formato JSON
 
 render = web.template.render('mvc/view/admin', base="layout")
 
-class Insert_sucursales:
+class Actualizar_sucursales:
     def GET(self): 
         try: 
             message = None 
             return render.insert_sucursales(message) 
         except Exception as error: 
             message = "Error en el sistema" 
-            print("Error insert_sucursales.GET: {}") 
-            return render.insert_sucursales(message) 
+            print("Error actualizar_sucursales.GET: {}") 
+            return render.actualizar_sucursales(message) 
     
 
     def POST(self): 
@@ -31,6 +31,6 @@ class Insert_sucursales:
         "temperatura": temperatura,
         "humedad": humedad,
         }
-        results = db.child("sucursales").child(id_01).set(data)
+        results = db.child("sucursales").child(id_01).update(data)
         return web.seeother("/bienvenida_administrador") 
         

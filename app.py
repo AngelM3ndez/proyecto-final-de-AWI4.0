@@ -16,7 +16,8 @@ urls = (
     '/', 'mvc.controllers.public.inicio.Inicio',  
     '/login', 'mvc.controllers.public.login.Login',
     '/recuperar_cuenta', 'mvc.controllers.public.recuperar_cuenta.Recuperar_cuenta',  
-    '/insert_sucursales', 'mvc.controllers.admin.insert_sucursales.Insert_sucursales',  
+    '/insert_sucursales', 'mvc.controllers.admin.insert_sucursales.Insert_sucursales', 
+    '/actualizar_sucursales', 'mvc.controllers.admin.actualizar_sucursales.Actualizar_sucursales', 
 )
 app = web.application(urls, globals())
 
