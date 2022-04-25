@@ -23,13 +23,11 @@ class Eliminar_sucursal:
         name= formulario.name
         temperatura= formulario.temperatura
         humedad = formulario.humedad 
-        numero = 100
-        id_01 = format(id(numero), 'x')
         data = {
         "name": name,
         "temperatura": temperatura,
         "humedad": humedad,
         }
-        results = db.child("sucursales").child(id_01).remove(data)
+        results = db.child("sucursales").child(localId).remove(data)
         return web.seeother("/bienvenida_administrador") 
         
