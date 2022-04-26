@@ -13,6 +13,7 @@ class Actualizar_sucursales:
             user = db.child("sucursales").child(localId).get()
             return render.actualizar_sucursales(user)
         except Exception as error: 
+            message = "Error en el sistema" 
             print("Error actualizar_sucursales.GET: {}".format(error))  
     
     def POST(self, localId):
@@ -30,6 +31,6 @@ class Actualizar_sucursales:
             "temperatura": temperatura,
             "humedad": humedad,
             "email": email,
-            }
-           results = db.child("sucursales").child(localid).update(data)
-           return web.seeother("/lista_sucursales")
+               }
+            results = db.child("sucursales").child(localid).update(data)
+            return web.seeother("/lista_sucursales")

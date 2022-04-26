@@ -32,7 +32,6 @@ class Insert_sucursales:
             data = {
             "name": name,
             "email": email,
-            "password": password,
             "temperatura": temperatura,
             "humedad": humedad,
             }

@@ -7,7 +7,7 @@ render = web.template.render("mvc/view/admin",base="layout")
 
 class Update:
     def GET(self, localId):
-        try: 
+         try: 
             firebase = pyrebase.initialize_app(token.firebaseConfig) 
             db = firebase.database() 
             user = db.child("usuarios").child(localId).get()
