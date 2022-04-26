@@ -31,7 +31,7 @@ class Actualizar_sucursales:
                 "humedad": humedad,
                 "email": email,
             }
-            db.child("sucursales").child(localid).update(data)
+            db.child("sucursales").child(localId).update(data)
             return web.seeother("/lista_sucursales")
         except Exception as error:
             print("Error actualizar_sucursales update.GET: {}".format(error))
