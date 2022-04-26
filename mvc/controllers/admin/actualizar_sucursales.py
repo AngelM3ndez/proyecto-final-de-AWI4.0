@@ -12,8 +12,7 @@ class Actualizar_sucursales:
             db = firebase.database() 
             sucursal = db.child("sucursales").child(localId).get()
             return render.actualizar_sucursales(sucursal)
-        except Exception as error: 
-            message = "Error en el sistema" 
+        except Exception as error:  
             print("Error actualizar_sucursales.GET: {}".format(error))  
     
 
