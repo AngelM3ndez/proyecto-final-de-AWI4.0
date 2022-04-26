@@ -23,8 +23,10 @@ class Eliminar_sucursal:
         name= formulario.name
         temperatura= formulario.temperatura
         humedad = formulario.humedad 
+        email = formulario.email
         data = {
         "name": name,
+        "email": email,
         "temperatura": temperatura,
         "humedad": humedad,
         }

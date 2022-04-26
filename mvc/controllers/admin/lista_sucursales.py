@@ -8,9 +8,12 @@ render = web.template.render('mvc/view/admin', base="layout")
 
 class Lista_sucursales:                             
     def GET(self):
+        try:
             firebase = pyrebase.initialize_app(token.firebaseConfig) 
             db = firebase.database() 
             users = db.child("sucursales").get()
             return render.lista_sucursales(users) 
-       
+        except Exception as error: 
+            print("Error Login.GET: {}".format(error))
+
 
