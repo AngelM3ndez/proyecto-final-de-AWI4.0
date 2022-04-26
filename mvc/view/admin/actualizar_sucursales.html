@@ -1,4 +1,4 @@
-$def with (message)
+$def with(user)
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,22 +6,30 @@ $def with (message)
     </head>
     <body>
         
-        $message
         <center>
-        <h1>ACTUALIZAR SUCURSALES</h1>
-        <form method="POST">
-            <p>NOMBRE</p>
-            <input type="name" name="name" id="name"   ><br>
-            <br>
-            <p>TEMPERATURA</p>
-            <input type="temperatura" name="temperatura" id="temperatura"><br>
-            <br>
-            <p>HUMEDAD</p>
-            <input type="humedad" name="humedad" id="humedad"><br>
-          <br>
-          <br>
-            <input type="submit" value="registro" class="btn btn-dark"><br>
-            <center>
-        </form>
-    </body>
-</html>
+            <h1>ACTUALIZAR SUCURSAL</h1>
+            <form method="POST">
+                <br>
+                <br>
+                <p>NOMBRE DE SUCURSAL</p>
+                <input type="name"  name="name" id="name"><br>
+                <br>
+                <p>CAMPOS_1</p>
+                <input type="temperatura" name="temperatura" id="temperatura"><br>
+                <br>
+                <p>CAMPOS_2</p>
+                <input type="humedad" name="humedad" id="humedad"><br>
+                <br>
+                <p>CORREO</p>
+                <input type="email" name="email" id="email"><br>
+                <br>
+                <br>
+                <input  name="localid" type="hidden" value= "$user.key()">
+                <br>
+                <br>
+                <input type="submit" value="registro" class="btn btn-dark"><br>
+                <center>
+            </form>
+        </body>
+    </html>
+    

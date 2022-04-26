@@ -17,20 +17,20 @@ class Update:
             print("Error update.GET: {}".format(error)) 
     
     def POST(self, localId):
-       firebase = pyrebase.initialize_app(token.firebaseConfig)
-       db = firebase.database()  
-       formulario = web.input() 
-       print(formulario)
-       name= formulario.name
-       phone= formulario.phone
-       email = formulario.email 
-       nivel = formulario.nivel
-       localid = formulario.localid  
-       data = {
+            firebase = pyrebase.initialize_app(token.firebaseConfig)
+            db = firebase.database()  
+            formulario = web.input() 
+            print(formulario)
+            name= formulario.name
+            phone= formulario.phone
+            email = formulario.email 
+            nivel = formulario.nivel
+            localid = formulario.localid  
+            data = {
             "name": name,
             "phone": phone,
             "email": email,
             "nivel": nivel
-        }
-       results = db.child("usuarios").child(localid).update(data)
-       return web.seeother("/user_list")
+                }
+            results = db.child("usuarios").child(localid).update(data)
+            return web.seeother("/user_list")

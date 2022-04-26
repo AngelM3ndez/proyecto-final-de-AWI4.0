@@ -17,20 +17,29 @@ class Insert_sucursales:
     
 
     def POST(self): 
-        firebase = pyrebase.initialize_app(token.firebaseConfig) 
-        auth = firebase.auth() 
-        db = firebase.database() 
-        formulario = web.input() 
-        name= formulario.name
-        temperatura= formulario.temperatura
-        humedad = formulario.humedad 
-        numero = 100
-        id_01 = format(id(numero), 'x')
-        data = {
-        "name": name,
-        "temperatura": temperatura,
-        "humedad": humedad,
-        }
-        results = db.child("sucursales").child(id_01).set(data)
-        return web.seeother("/bienvenida_administrador") 
-        
+        try: 
+            firebase = pyrebase.initialize_app(token.firebaseConfig) 
+            auth = firebase.auth() 
+            db = firebase.database() 
+            formulario = web.input() 
+            name= formulario.name
+            temperatura= formulario.temperatura
+            humedad = formulario.humedad 
+            email = formulario.email 
+            password= formulario.password 
+            user = auth.create_user_with_email_and_password(email,password)  
+            local_id =  (user ['localId'])
+            data = {
+            "name": name,
+            "email": email,
+            "password": password,
+            "temperatura": temperatura,
+            "humedad": humedad,
+            }
+            results = db.child("sucursales").child(user['localId']).set(data)
+            return web.seeother("/bienvenida_administrador") 
+        except Exception as error: 
+            formato = json.loads(error.args[1]) 
+            error = formato['error'] 
+            message = error['message']
+            return render.registro(message) 
